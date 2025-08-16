@@ -1,13 +1,21 @@
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const targetId = this.getAttribute("href");
-    document.querySelector(targetId).scrollIntoView({
-      behavior: "smooth",
-    });
+    // بررسی کنیم که href فقط "#" نباشه
+    if (targetId && targetId !== "#") {
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
   });
 });
 
+// Hide header on scroll down, show on scroll up
 let lastScroll = 0;
 const header = document.querySelector("header");
 
@@ -15,16 +23,15 @@ window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
 
   if (currentScroll > lastScroll && currentScroll > 50) {
-    // اسکرول رو به پایین → مخفی کن
     header.classList.add("hide");
   } else {
-    // اسکرول رو به بالا → نمایش بده
     header.classList.remove("hide");
   }
 
   lastScroll = currentScroll;
 });
 
+// Animate skill bars when in view
 document.addEventListener("DOMContentLoaded", () => {
   const bars = document.querySelectorAll(".progress-bar");
 
