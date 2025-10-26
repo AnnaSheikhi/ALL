@@ -1,0 +1,10 @@
+.screen{
+    background-color: black;
+    border-radius: 18px;
+    color: white;
+    font-size: 50px;
+}
+.btns .btn{
+    background-color: blueviolet;
+    border-radius: 18px;
+}
