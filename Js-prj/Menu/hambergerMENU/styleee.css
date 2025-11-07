@@ -50,6 +50,10 @@ nav li:first-child{
 .sidebar li{
   width: 100%;
 }
+
+.sidebar a{
+  width: 100%;
+}
 .menu-button{
   display: none;
 }
