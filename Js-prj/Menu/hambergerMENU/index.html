@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HamburgerMENU</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black min-h-screen font-sans">
+
+  <nav class="bg-white shadow-md w-full">
+    <ul class="flex justify-end items-center w-full">
+      <li class="mr-auto">
+        <a href="#" class="px-8 py-3 text-black text-lg font-bold flex items-center">LOGO</a>
+      </li>
+
+      <li class="hidden md:block"><a href="#" class="px-6 py-3 hover:bg-gray-100 block">Projects</a></li>
+      <li class="hidden md:block"><a href="#" class="px-6 py-3 hover:bg-gray-100 block">Logim</a></li>
+      <li class="hidden md:block"><a href="#" class="px-6 py-3 hover:bg-gray-100 block">About</a></li>
+
+      <li class="md:hidden cursor-pointer" onclick="showSidebar()">
+        <a class="p-3 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <ul class="sidebar fixed top-0 right-0 h-screen w-64 bg-white shadow-2xl flex-col hidden">
+    <li class="w-full" onclick="hideSidebar()">
+      <a class="px-6 py-4 flex items-center hover:bg-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+      </a>
+    </li>
+    <li class="w-full"><a href="#" class="px-6 py-4 hover:bg-gray-100 block">Projects</a></li>
+    <li class="w-full"><a href="#" class="px-6 py-4 hover:bg-gray-100 block">Login</a></li>
+    <li class="w-full"><a href="#" class="px-6 py-4 hover:bg-gray-100 block">About</a></li>
+  </ul>
+
+  <script>
+      function showSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'flex'
+    }
+    function hideSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'none'
+    }
+  </script>
+
+</body>
+</html>
