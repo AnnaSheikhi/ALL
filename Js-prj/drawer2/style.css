@@ -1,0 +1,36 @@
+.container, .main {
+    background-color: blueviolet;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.main {
+    background-color: black;
+}
+
+.drawer {
+    background-color: rgb(116, 30, 30);
+    width: 300px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -300px;
+    transition: all 1s ease-in-out;
+
+}
+
+.openedDrawer{
+    right: 0;
+    transition: all 2s ease-in-out;
+}
+
+.btn {
+    color: white;
+    cursor: pointer;
+    font-size: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
