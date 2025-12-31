@@ -1,14 +1,15 @@
-const drawer = document.querySelector('.drawer')
-let drawerStat = 0
+const drawer = document.querySelector('.drawer');
+const head = document.querySelector('.head');
+let drawerStat = 0;
+
 function openedDrawer() {
     if (drawerStat === 0) {
-        console.log(drawer);
-        
         drawer.classList.add("openedDrawer");
-    drawerStat = 1;
-
-} else {
+        head.classList.add("openedText"); // 
+        drawerStat = 1;
+    } else {
         drawer.classList.remove("openedDrawer");
-    drawerStat = 0;
-}
+        head.classList.remove("openedText"); // 
+        drawerStat = 0;
+    }
 }
