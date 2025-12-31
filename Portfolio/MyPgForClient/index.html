@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="پورتفولیوی Anna — جونیور فرانت‌اند و طراح گرافیک. نمونه‌کارها، مهارت‌ها و راه‌های تماس.">
+  <title>Anna — Junior Front-End & Graphic Designer</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts (فارسی + انگلیسی) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#05060a; /* very dark */
+      --neon-pink: #ff2d95;
+      --neon-blue: #2be7ff;
+      --card: rgba(255,255,255,0.03);
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+    }
+    html,body{height:100%;}
+    body{background: radial-gradient(1200px 600px at 10% 10%, rgba(43,231,255,0.04), transparent), radial-gradient(1000px 500px at 90% 30%, rgba(255,45,149,0.03), transparent), var(--bg); font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+
+    /* neon glow utility classes (for small uses) */
+    .neon-text-pink{ text-shadow: 0 0 8px rgba(255,45,149,0.6), 0 0 18px rgba(255,45,149,0.25); color: #fff; }
+    .neon-text-blue{ text-shadow: 0 0 8px rgba(43,231,255,0.6), 0 0 18px rgba(43,231,255,0.25); color: #fff; }
+
+    /* subtle glass card with neon border */
+    .glass-card{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 6px 30px rgba(2,6,23,0.6); }
+
+    /* neon border frame */
+    .neon-frame{ position:relative; }
+    .neon-frame::before{ content:''; position:absolute; inset:-6px; border-radius:12px; background: linear-gradient(90deg, rgba(255,45,149,0.12), rgba(43,231,255,0.12)); filter: blur(12px); z-index:-2; }
+    .neon-frame::after{ content:''; position:absolute; inset:-1px; border-radius:10px; background: linear-gradient(90deg, rgba(255,45,149,0.18), rgba(43,231,255,0.18)); z-index:-1; }
+
+    /* progress bar style */
+    .skill-track{ background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius:999px; height:14px; }
+    .skill-fill{ height:14px; border-radius:999px; box-shadow: 0 4px 18px rgba(0,0,0,0.6), 0 0 18px rgba(255,45,149,0.08); }
+
+    /* modal base */
+    .modal-backdrop{ background: rgba(2,6,23,0.6); backdrop-filter: blur(4px); }
+
+    /* responsive tweaks */
+    @media (max-width:768px){ .desktop-only{ display:none; } }
+
+  </style>
+</head>
+<body class="text-gray-200">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="text-sm text-gray-300 uppercase tracking-widest">Anna's Portfolio</div>
+        <div class="ml-3 hidden md:block">
+          <!-- small neon logo circle -->
+          <div class="w-8 h-8 rounded-full" style="background: linear-gradient(135deg,var(--neon-pink),var(--neon-blue)); box-shadow:0 6px 18px rgba(43,231,255,0.12),0 6px 36px rgba(255,45,149,0.09)"></div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#home" class="px-3 py-2 rounded hover:text-white transition">خانه</a>
+        <a href="#work" class="px-3 py-2 rounded hover:text-white transition">Work</a>
+        <a href="#skills" class="px-3 py-2 rounded hover:text-white transition">Skills</a>
+        <a href="#contact" class="px-3 py-2 rounded bg-gradient-to-r from-pink-600 to-cyan-400 text-black font-semibold">Contact</a>
+      </nav>
+
+      <!-- mobile menu button -->
+      <div class="md:hidden">
+        <button id="btnMobileMenu" class="p-2 rounded bg-black/30 backdrop-blur">منو</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- Hero -->
+    <section id="home" class="max-w-6xl mx-auto px-6 py-16 lg:py-28 flex flex-col lg:flex-row items-center gap-10">
+      <div class="flex-1">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4 neon-text-pink">Hi, I'm Anna — <span class="neon-text-blue">creative web designer</span> & front-end student.</h1>
+        <p class="text-gray-300 mb-6 max-w-xl">من رابط‌های بصری مینیمال و مدرن طراحی می‌کنم با حال‌ و هوای نئون. ترکیب گرافیک و فرانت‌اند برای ساخت تجربه‌های جذاب را دوست دارم. در ادامه نمونه‌کارها، مهارت‌ها و راه‌های تماس را می‌بینید.</p>
+
+        <div class="flex gap-4 mb-6">
+          <a href="#work" class="px-5 py-3 rounded-full font-semibold bg-gradient-to-r from-pink-500 to-cyan-400 text-black shadow-lg hover:scale-105 transform transition">View Portfolio</a>
+          <a href="#contact" class="px-5 py-3 rounded-full border border-gray-700 text-gray-200 hover:bg-white/5 transition">Contact Me</a>
+          <a href="/resume.pdf" target="_blank" class="px-4 py-3 rounded-full neon-text-blue border border-transparent hover:underline">Download Resume</a>
+        </div>
+
+        <!-- small badges -->
+        <div class="flex gap-3 text-xs text-gray-400">
+          <span class="bg-white/3 px-3 py-1 rounded">HTML</span>
+          <span class="bg-white/3 px-3 py-1 rounded">CSS</span>
+          <span class="bg-white/3 px-3 py-1 rounded">Tailwind</span>
+          <span class="bg-white/3 px-3 py-1 rounded">JavaScript</span>
+        </div>
+      </div>
+
+      <!-- Neon illustrations / jelly shapes on right -->
+      <div class="w-full max-w-md hidden lg:block">
+        <div class="relative">
+          <!-- placeholder for neon shapes; you can replace with SVG or image -->
+          <img src="/assets/jelly-blue.png" alt="neon shape blue" class="absolute -left-12 top-0 w-48 opacity-90 drop-shadow-[0_10px_40px_rgba(43,231,255,0.25)]">
+          <img src="/assets/jelly-pink.png" alt="neon shape pink" class="absolute -right-0 top-10 w-56 opacity-90 drop-shadow-[0_10px_40px_rgba(255,45,149,0.25)]">
+
+          <!-- framed profile card -->
+          <div class="neon-frame rounded-xl p-1 mt-24 mx-auto max-w-sm">
+            <div class="glass-card rounded-lg p-6 text-center">
+              <img src="/assets/profile.jpg" alt="Anna profile" class="w-36 h-36 rounded-full object-cover mx-auto mb-4 border-2 border-white/5">
+              <div class="text-lg font-semibold">Anna</div>
+              <div class="text-sm text-gray-400">Junior Front-End & Graphic Designer</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Intro -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-bold mb-4 neon-text-blue">About Me</h2>
+          <div class="glass-card rounded-lg p-6">
+            <p class="text-gray-300 mb-4">من Anna هستم، یک طراح گرافیک با گرایش به تجربه‌های بصری جذاب. از 2D تا مدل‌سازی پایه در Blender، و از طراحی تا پیاده‌سازی رابط‌ها با HTML/CSS/Tailwind — مسیر من ترکیبی از هنر و کدنویسی است.</p>
+            <p class="text-gray-300">در پروژه‌هایم تمرکز روی طراحی قابل‌استفاده و ریسپانسیو است. من دوست دارم ایده‌ها را به تجربه‌های تعاملی تبدیل کنم.</p>
+          </div>
+        </div>
+        <aside class="space-y-4">
+          <div class="glass-card rounded-lg p-4 neon-frame">
+            <div class="text-sm text-gray-300">Short Bio</div>
+            <div class="font-semibold text-lg mt-2">Anna — Junior Front-End</div>
+            <div class="text-xs text-gray-400 mt-2">[شهر] · [ایمیل] · [تلفن]</div>
+          </div>
+
+          <div class="glass-card rounded-lg p-4">
+            <div class="text-sm text-gray-300">Tools</div>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="px-3 py-1 text-xs bg-white/3 rounded">Figma</span>
+              <span class="px-3 py-1 text-xs bg-white/3 rounded">Blender</span>
+              <span class="px-3 py-1 text-xs bg-white/3 rounded">Photoshop</span>
+              <span class="px-3 py-1 text-xs bg-white/3 rounded">VSCode</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Work / Projects -->
+    <section id="work" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-bold mb-8 neon-text-pink">Recent Work</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project card template - duplicate for each project -->
+        <article class="glass-card rounded-lg overflow-hidden p-4 relative group">
+          <img src="/assets/project1.jpg" alt="Deep Sea Landing" class="w-full h-40 object-cover rounded-md mb-3">
+          <h3 class="font-semibold text-lg mb-1">Deep Sea Landing</h3>
+          <p class="text-sm text-gray-300 mb-3">One-page concept with glossy cards and neon gradients. Responsive layout.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2 text-xs">
+              <span class="bg-white/3 px-2 py-1 rounded">HTML</span>
+              <span class="bg-white/3 px-2 py-1 rounded">CSS</span>
+              <span class="bg-white/3 px-2 py-1 rounded">Tailwind</span>
+            </div>
+            <div class="flex gap-2">
+              <button data-proj="1" class="px-3 py-1 rounded bg-gradient-to-r from-pink-500 to-cyan-400 text-black text-sm">Preview</button>
+              <a href="#" class="px-3 py-1 rounded border border-gray-700 text-sm">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- copy -->
+        <article class="glass-card rounded-lg overflow-hidden p-4 relative group">
+          <img src="/assets/project2.jpg" alt="Neon Resume" class="w-full h-40 object-cover rounded-md mb-3">
+          <h3 class="font-semibold text-lg mb-1">Neon Resume</h3>
+          <p class="text-sm text-gray-300 mb-3">Responsive resume site with focus on readability and keyboard navigation.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2 text-xs">
+              <span class="bg-white/3 px-2 py-1 rounded">HTML</span>
+              <span class="bg-white/3 px-2 py-1 rounded">CSS</span>
+            </div>
+            <div class="flex gap-2">
+              <button data-proj="2" class="px-3 py-1 rounded bg-gradient-to-r from-pink-500 to-cyan-400 text-black text-sm">Preview</button>
+              <a href="#" class="px-3 py-1 rounded border border-gray-700 text-sm">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass-card rounded-lg overflow-hidden p-4 relative group">
+          <img src="/assets/project3.jpg" alt="UI Micro-Library" class="w-full h-40 object-cover rounded-md mb-3">
+          <h3 class="font-semibold text-lg mb-1">UI Micro-Library</h3>
+          <p class="text-sm text-gray-300 mb-3">Reusable CSS utilities for glow, glass and soft shadows — 10+ components.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2 text-xs">
+              <span class="bg-white/3 px-2 py-1 rounded">CSS</span>
+              <span class="bg-white/3 px-2 py-1 rounded">Components</span>
+            </div>
+            <div class="flex gap-2">
+              <button data-proj="3" class="px-3 py-1 rounded bg-gradient-to-r from-pink-500 to-cyan-400 text-black text-sm">Preview</button>
+              <a href="#" class="px-3 py-1 rounded border border-gray-700 text-sm">Code</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-bold mb-6 neon-text-blue">My Skills</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <div>
+            <div class="flex justify-between mb-1 text-sm text-gray-300"><span>HTML</span><span>90%</span></div>
+            <div class="skill-track rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-pink-500 to-cyan-400 w-[90%] animate-skill" style="width:90%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1 text-sm text-gray-300"><span>CSS</span><span>85%</span></div>
+            <div class="skill-track rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-pink-500 to-cyan-400 w-[85%]" style="width:85%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1 text-sm text-gray-300"><span>JavaScript</span><span>60%</span></div>
+            <div class="skill-track rounded-full overflow-hidden"><div class="skill-fill bg-gradient-to-r from-pink-500 to-cyan-400 w-[60%]" style="width:60%"></div></div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-lg p-4">
+          <h3 class="font-semibold mb-2">Experience & Focus</h3>
+          <p class="text-gray-300 text-sm">I focus on building pixel-perfect UI, responsive layouts, and small interactive components. I'm improving my JavaScript skills and exploring accessible animations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-bold mb-6 neon-text-pink">Contact</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <form id="contactForm" class="glass-card rounded-lg p-6 space-y-4" onsubmit="submitForm(event)">
+          <label class="block text-sm text-gray-300">نام
+            <input type="text" name="name" required class="mt-2 w-full px-3 py-2 rounded bg-transparent border border-white/5 focus:outline-none focus:ring-2 focus:ring-pink-500">
+          </label>
+          <label class="block text-sm text-gray-300">ایمیل
+            <input type="email" name="email" required class="mt-2 w-full px-3 py-2 rounded bg-transparent border border-white/5 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+          </label>
+          <label class="block text-sm text-gray-300">پیام
+            <textarea name="message" rows="4" required class="mt-2 w-full px-3 py-2 rounded bg-transparent border border-white/5 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+          </label>
+          <button type="submit" class="w-full px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 to-cyan-400 text-black font-semibold">Send Message</button>
+        </form>
+
+        <div class="glass-card rounded-lg p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="font-semibold mb-2">Elsewhere</h3>
+            <p class="text-sm text-gray-300 mb-4">Find me on social platforms and code repos.</p>
+            <div class="flex gap-3">
+              <a href="#" class="px-3 py-2 bg-white/3 rounded text-xs">GitHub</a>
+              <a href="#" class="px-3 py-2 bg-white/3 rounded text-xs">LinkedIn</a>
+              <a href="#" class="px-3 py-2 bg-white/3 rounded text-xs">Behance</a>
+            </div>
+          </div>
+
+          <div class="mt-6 text-xs text-gray-400">© 2025 Anna — All rights reserved.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal template for project preview -->
+  <div id="projModal" class="fixed inset-0 hidden items-center justify-center z-60">
+    <div class="modal-backdrop absolute inset-0"></div>
+    <div class="relative z-50 max-w-3xl w-full p-6">
+      <div class="glass-card rounded-lg p-6">
+        <button id="closeModal" class="absolute top-4 left-4 px-3 py-1 rounded bg-black/40">بستن</button>
+        <h3 id="projTitle" class="text-xl font-bold neon-text-pink mb-2">Project Title</h3>
+        <p id="projDesc" class="text-gray-300 mb-4">Project description goes here.</p>
+        <div class="flex gap-3">
+          <a id="projDemo" href="#" class="px-3 py-2 bg-gradient-to-r from-pink-500 to-cyan-400 text-black rounded">Live Demo</a>
+          <a id="projCode" href="#" class="px-3 py-2 border border-gray-700 rounded">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer small -->
+  <footer class="mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-8 text-xs text-gray-500">Built with HTML & Tailwind • Designed by Anna</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle (simple)
+    const btnMobile = document.getElementById('btnMobileMenu');
+    btnMobile?.addEventListener('click', ()=>{
+      alert('برای نمایش منو موبایل در این نسخه نمونه، می‌توانید منو را سفارشی کنید.');
+    });
+
+    // Project modal logic (demo)
+    const modal = document.getElementById('projModal');
+    const closeModal = document.getElementById('closeModal');
+    document.querySelectorAll('[data-proj]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = btn.getAttribute('data-proj');
+        // sample content - replace with your project details
+        const data = {
+          1: {title:'Deep Sea Landing', desc:'یک لندینگ پیج با کارت‌های گلاسه و گرادینت‌های نئونی. ریسپانسیو و زیبا.', demo:'#', code:'#'},
+          2: {title:'Neon Resume', desc:'رزومه آنلاین با تاکید بر خوانایی و ناوبری کیبورد.', demo:'#', code:'#'},
+          3: {title:'UI Micro-Library', desc:'کامپوننت‌های UI با افکت‌های glow و glass.', demo:'#', code:'#'}
+        };
+        const p = data[id] || {title:'Project', desc:'No description', demo:'#', code:'#'};
+        document.getElementById('projTitle').innerText = p.title;
+        document.getElementById('projDesc').innerText = p.desc;
+        document.getElementById('projDemo').href = p.demo;
+        document.getElementById('projCode').href = p.code;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+    closeModal?.addEventListener('click', ()=>{ modal.classList.add('hidden'); modal.classList.remove('flex'); });
+
+    // simple fake submit handler
+    function submitForm(e){
+      e.preventDefault();
+      const f = e.target;
+      // here you would send to your backend or use Formspree / Netlify forms
+      alert('پیام ارسال شد — در نسخه نمونه دریافت می‌شود.');
+      f.reset();
+    }
+
+    // Optional: animate skill bars on scroll (simple)
+    const skillEls = document.querySelectorAll('.skill-fill');
+    function animateSkills(){
+      const trigger = window.innerHeight * 0.9;
+      skillEls.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < trigger){ el.style.width = el.style.width; /* already set inline */ }
+      });
+    }
+    window.addEventListener('scroll', animateSkills);
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+div{
+    text-align: center;
+    margin: 30px;
+}
+.button {
+    margin-top: auto;
+    border-radius: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
